@@ -1,0 +1,16 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wear a Helmet</title>
+<body>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <b>Lisää kirjat: </b><br>
+        <input type="file" name="books.txt"><br>
+        <b>Valitse kirjastot: </b><br>
+        <input type="checkbox" id="top1" name="top" value="Oodi">
+        <label for="top1">Oodi</label><br>
+        <input type="checkbox" id="top2" name="top" value="Rikhardinkatu">
+        <label for="top2">Rikhardinkatu</label><br>
+        <input type="checkbox" id="top3" name="top" value="Kannelmäki">
+        <label for="top3">Kannelmäki</label><br>
+        <input type="submit" value="Hae">
+    </form>
+</body>
