@@ -13,6 +13,9 @@ def upload():
     books=request.files["books.txt"]
     libraries=request.form.getlist("top")
     available=Search(books, libraries).check_availability()
+    with open("output.txt", "w") as output:
+        for book in available:
+            output.write(book+"\n")
     if len(available)<=0:
         available=None
     return render_template("result.html", available=available)

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+      {
+          "src": "*.py",
+          "use": "@mizhonka/helmetcheck"
+      }
+  ],
+  "routes": [
+      {
+          "src": "(.*)",
+          "dest": "app.py"
+      }
+  ]
+}
