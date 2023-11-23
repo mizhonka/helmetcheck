@@ -3,7 +3,7 @@
   "builds": [
       {
           "src": "*.py",
-          "use": "@mizhonka/helmetcheck"
+          "use": "@vercel/python"
       }
   ],
   "routes": [
