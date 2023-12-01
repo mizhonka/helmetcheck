@@ -1,21 +1,40 @@
-from flask import Flask
-from flask import render_template, request
 from search import Search
 
-app=Flask(__name__)
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-@app.route("/upload", methods=["POST"])
-def upload():
-    books=request.files["books.txt"]
-    libraries=request.form.getlist("top")
-    available=Search(books, libraries).check_availability()
-    with open("output.txt", "w") as output:
-        for book in available:
-            output.write(book+"\n")
+def perform_search(lib):
+    path="tbr_books.txt"
+    libraries=lib
+    available=Search(path, libraries).check_availability()
     if len(available)<=0:
         available=None
-    return render_template("result.html", available=available)
+    return available
+
+def main():
+    avb=[]
+    print("HELMET CHECK\nEnter command:\n")
+    cmd=int(input("1 - General availability\n2 - Choose libraries\n3 - Exit\n"))
+    if cmd==1:
+        avb=perform_search([])
+    elif cmd==2:
+        options=["", "Oodi", "Kannelmäki", "Rikhardinkatu"]
+        lib=[]
+        while True:
+            print(f"Searching from {lib}")
+            opt=int(input("1 - Oodi\n2 - Kannelmäki\n3 - Rikhardinkatu\n4 - Custom\n5 - Done\n"))
+            if opt in (1,2,3):
+                if options[opt] not in lib:
+                    lib.append(options[opt])
+            elif opt==4:
+                new=input("Enter the name of the library: ")
+                if new not in lib:
+                    lib.append(new)
+            elif opt==5:
+                break
+        avb=perform_search(lib)
+    elif cmd==3:
+        return
+    print("The following books are available:\n")
+    for link in avb:
+        print(link)
+
+if __name__=="__main__":
+    main()

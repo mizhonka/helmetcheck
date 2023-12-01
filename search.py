@@ -1,11 +1,13 @@
 import urllib.request
 
 class Search:
-    def __init__(self, books, libraries):
+    def __init__(self, path, libraries):
         self.links=[]
         self.libraries=libraries
-        for b in books:
-            self.links.append(str(b)[2:-3])
+        with open(path) as file:
+            for row in file:
+                row=row.replace("\n", "")
+                self.links.append(row)
 
     def get_html(self, link):
         data=urllib.request.urlopen(link)
