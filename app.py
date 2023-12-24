@@ -1,3 +1,4 @@
+"""
 from search import Search
 
 def perform_search(lib):
@@ -36,5 +37,12 @@ def main():
         for link in avb:
             output.write(link)
 
+
 if __name__=="__main__":
     main()
+"""
+from os import getenv
+from flask import Flask
+
+app=Flask(__name__)
+import routes
