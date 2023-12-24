@@ -22,6 +22,7 @@ class Search:
             if "Saatavilla" in html:
                 if len(self.libraries)<=0:
                     available.append(link)
+                    print(link)
                     continue
                 a=html.find("allavailitems")
                 html=html[a:]
@@ -30,5 +31,6 @@ class Search:
                 for lib in self.libraries:
                     if lib in html:
                         available.append(link)
+                        print(link)
                         break
         return available

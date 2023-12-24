@@ -5,10 +5,6 @@ https://haku.helmet.fi/iii/encore/record/C__Rb2540408__SEric%20LaRocca__Orightre
 https://haku.helmet.fi/iii/encore/record/C__Rb2359056__SDeath%20of%20a%20Salesman__Orightresult__U__X7?lang=fin&suite=cobalt
 https://haku.helmet.fi/iii/encore/record/C__Rb1782119__SDeath%20of%20a%20Salesman__P0%2C2__Orightresult__U__X7?lang=fin&suite=cobalt
 https://haku.helmet.fi/iii/encore/record/C__Rb1409279__SDeath%20of%20a%20Salesman__P0%2C3__Orightresult__U__X7?lang=fin&suite=cobalt
-https://haku.helmet.fi/iii/encore/record/C__Rb1912459__SKafka%20on%20the%20Shore__Orightresult__U__X7?lang=fin&suite=cobalt
-https://haku.helmet.fi/iii/encore/record/C__Rb2477768__SKafka%20on%20the%20Shore__P0%2C2__Orightresult__U__X3?lang=fin&suite=cobalt
-https://haku.helmet.fi/iii/encore/record/C__Rb1899872__SKafka%20on%20the%20Shore__P0%2C3__Orightresult__U__X3?lang=fin&suite=cobalt
-https://haku.helmet.fi/iii/encore/record/C__Rb2135755__SKafka%20on%20the%20Shore__P0%2C4__Orightresult__U__X3?lang=fin&suite=cobalt
 https://haku.helmet.fi/iii/encore/record/C__Rb2376173__SOyinkan%20Braithwaite__Ff%3Afacetlanguages%3Aeng%3Aeng%3Aenglanti%3A%3A__Orightresult__U__X4?lang=fin&suite=cobalt
 https://haku.helmet.fi/iii/encore/record/C__Rb2404247__SOyinkan%20Braithwaite__Ff%3Afacetlanguages%3Aeng%3Aeng%3Aenglanti%3A%3A__P0%2C1__Orightresult__U__X4?lang=fin&suite=cobalt
 https://haku.helmet.fi/iii/encore/record/C__Rb2440009__SRaven%20Leilani__Ff%3Afacetlanguages%3Aeng%3Aeng%3Aenglanti%3A%3A__Orightresult__U__X4?lang=fin&suite=cobalt
@@ -48,3 +44,11 @@ https://haku.helmet.fi/iii/encore/record/C__Rb2353530__Sred%20garden__Orightresu
 https://haku.helmet.fi/iii/encore/record/C__Rb2375549__SHiro%20Arikawa__Orightresult__U__X4?lang=fin&suite=cobalt
 https://haku.helmet.fi/iii/encore/record/C__Rb2422585__Spaul%20takes%20the%20form__Orightresult__U__X6?lang=fin&suite=cobalt
 https://haku.helmet.fi/iii/encore/record/C__Rb2156365__Salice%20oseman__Ff%3Afacetlanguages%3Aeng%3Aeng%3Aenglanti%3A%3A__P0%2C5__Orightresult__U__X4?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb2547718__Smiki%20liukkonen__Orightresult__U__X4?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb1637405__Scoraline__Ff%3Afacetmediatype%3A1%3A1%3AKirja%3A%3A__Ff%3Afacetlanguages%3Aeng%3Aeng%3Aenglanti%3A%3A__P0%2C2__Orightresult__U__X7?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb2309764__Slolita__Orightresult__U__X7?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb2037336__Slolita__P0%2C3__Orightresult__U__X7?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb2532860__SBaek%20Se-hee__Orightresult__U__X3?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb2404472__Sosamu%20dazai__P0%2C1__Orightresult__U__X4?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb1928432__Scormac%20mccarthy__Ff%3Afacetlanguages%3Aeng%3Aeng%3Aenglanti%3A%3A__Ff%3Afacetmediatype%3A1%3A1%3AKirja%3A%3A__P0%2C6__Orightresult__U__X4?lang=fin&suite=cobalt
+https://haku.helmet.fi/iii/encore/record/C__Rb2472485__Scormac%20mccarthy__Ff%3Afacetlanguages%3Aeng%3Aeng%3Aenglanti%3A%3A__Ff%3Afacetmediatype%3A1%3A1%3AKirja%3A%3A__P0%2C14__Orightresult__U__X4?lang=fin&suite=cobalt

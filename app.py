@@ -32,9 +32,9 @@ def main():
         avb=perform_search(lib)
     elif cmd==3:
         return
-    print("The following books are available:\n")
-    for link in avb:
-        print(link)
+    with open("/home/mizhonka/OneDrive/output.txt", "w") as output:
+        for link in avb:
+            output.write(link)
 
 if __name__=="__main__":
     main()
