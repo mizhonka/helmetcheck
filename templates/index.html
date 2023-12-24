@@ -3,16 +3,18 @@
     <ul>
         {%for l in libraries%}
             <li>
-                l
+                {{l}}
             </li>
         {%endfor%}
     </ul>
-    <form action="" method="POST">
+    <form action="/add_library" method="POST">
         <input type="text" placeholder="Kirjaston nimi" name="library">
+        <input type="hidden" name="libraries" value="{{libraries}}">
         <input type="submit" value="Lisää"><br>
     </form>
-    <form action="" method="POST">
+    <form action="/search" method="POST">
         <input type="submit" value="Hae">
+        <input type="hidden" name="libraries" value="{{libraries}}">
     </form>
 </head>
 <body>

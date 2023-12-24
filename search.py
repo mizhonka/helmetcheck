@@ -18,6 +18,8 @@ class Search:
     def check_availability(self):
         available=[]
         for link in self.links:
+            if not link:
+                continue
             html=self.get_html(link)
             if "Saatavilla" in html:
                 if len(self.libraries)<=0:
