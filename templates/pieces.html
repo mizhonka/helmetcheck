@@ -1,0 +1,27 @@
+<head>
+    <title>Wear a Helmet</title>
+</head>
+<body>
+    <a href="/">Haku</a>
+    <a href="/pieces">Teokset</a>
+    <h1>Teokset:</h1>
+    <form action="/new_piece" method="POST">
+        <input type="text" placeholder="Teoksen nimi" name="name">
+        <input type="submit" value="Lisää uusi teos">
+    </form>
+    <ul>
+        {%for piece in pieces%}
+            <li>
+                {{piece.title}}
+                {%if piece.included%}
+                    <a href="/hide_piece/{{piece.id}}">Piilota</a>
+                {%else%}
+                    <a href="/hide_piece/{{piece.id}}">Näytä</a>
+                {%endif%}
+                <a href="/edit_piece/{{piece.id}}">Muokkaa</a>
+                <a href="/delete_piece/{{piece.id}}">Poista</a>
+                </form>
+            </li>
+        {%endfor%}
+    </ul>
+</body>

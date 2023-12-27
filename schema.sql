@@ -6,6 +6,6 @@ CREATE TABLE Pieces(
 
 CREATE TABLE Links(
     id SERIAL PRIMARY KEY,
-    piece_id INTEGER REFERENCES Pieces(id),
+    piece_id INTEGER REFERENCES Pieces(id) ON DELETE CASCADE,
     link TEXT
 );

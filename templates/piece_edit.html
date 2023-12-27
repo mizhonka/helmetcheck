@@ -1,0 +1,19 @@
+<head>
+    <title>Wear a Helmet</title>
+</head>
+<body>
+    <a href="/">Haku</a>
+    <a href="/pieces">Teokset</a>
+    <h1>{{piece.title}}</h1>
+    <h3>Linkit:</h3>
+    <form action="/add_link" method="POST">
+        <input type="text" size="40" placeholder="Linkki Helmet-kirjaston teokseen" name="link">
+        <input type="hidden" value="{{piece.id}}" name="id">
+        <input type="submit" value="Lisää">
+    </form>
+    <ul>
+        {%for link in piece_links%}
+        <li>{{link}}</li>
+        {%endfor%}
+    </ul>
+</body>
