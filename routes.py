@@ -35,8 +35,9 @@ def search():
     libraries=get_libraries(request.form["libraries"])
     if not libraries:
         return redirect("/")
-    result=Search("/home/mizhonka/Documents/tbr.txt", libraries).check_availability()
-    return render_template("results.html", links=result)
+    targets=links.get_included_links()
+    result=Search(targets, libraries).check_availability()
+    return render_template("results.html", results=result)
 
 @app.route("/pieces")
 def show_pieces():
@@ -71,3 +72,8 @@ def add_link():
     link=request.form["link"]
     links.add(id, link)
     return redirect(f"/edit_piece/{id}")
+
+@app.route("/delete_link/<int:piece_id>/<int:id>")
+def delete_link(piece_id,id):
+    links.delete(id)
+    return redirect(f"/edit_piece/{piece_id}")

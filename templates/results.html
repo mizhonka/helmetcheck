@@ -4,10 +4,15 @@
 <body>
     <a href="/">Haku</a>
     <a href="/pieces">Teokset</a>
-    <p>Seuraavat kirjat ovat saatavilla:</p>
-    <ul>
-        {%for link in links%}
-            <li><a>{{link}}</a></li>
-        {%endfor%}
-    </ul>
+    <h1>Seuraavat kirjat ovat saatavilla:</h1>
+    {%for title, links in results.items()%}
+        {%if links%}
+            <h3>{{title}}</h3>
+            <ul>
+                {%for link in links%}
+                    <li><a href="{{link}}">{{link}}</a></li>
+                {%endfor%}
+            </ul>
+        {%endif%}
+    {%endfor%}
 </body>

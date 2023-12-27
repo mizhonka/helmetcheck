@@ -1,13 +1,10 @@
 import urllib.request
 
 class Search:
-    def __init__(self, path, libraries):
-        self.links=[]
+    def __init__(self, targets, libraries):
+        self.targets=targets
+        self.available=dict.fromkeys([target.title for target in targets])
         self.libraries=libraries
-        with open(path) as file:
-            for row in file:
-                row=row.replace("\n", "")
-                self.links.append(row)
 
     def get_html(self, link):
         data=urllib.request.urlopen(link)
@@ -16,23 +13,19 @@ class Search:
         return html
 
     def check_availability(self):
-        available=[]
-        for link in self.links:
-            if not link:
-                continue
+        for target in self.targets:
+            link=target.link
+            piece=target.title
             html=self.get_html(link)
             if "Saatavilla" in html:
-                if len(self.libraries)<=0:
-                    available.append(link)
-                    print(link)
-                    continue
                 a=html.find("allavailitems")
                 html=html[a:]
                 b=html.find("</table>")
                 html=html[:b]
                 for lib in self.libraries:
                     if lib in html:
-                        available.append(link)
-                        print(link)
+                        if not self.available[piece]:
+                            self.available[piece]=[]
+                        self.available[piece].append(link)
                         break
-        return available
+        return self.available

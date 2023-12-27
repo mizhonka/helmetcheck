@@ -13,7 +13,10 @@
     </form>
     <ul>
         {%for link in piece_links%}
-        <li>{{link}}</li>
+        <li>
+            <a href="{{link.link}}">{{link.link}}</a>
+            <a href="/delete_link/{{piece.id}}/{{link.id}}">Poista</a>
+        </li>
         {%endfor%}
     </ul>
 </body>
