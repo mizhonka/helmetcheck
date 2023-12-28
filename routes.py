@@ -17,13 +17,19 @@ def get_libraries(str_libraries):
     libraries=[l.translate(extras).strip() for l in library_list if l.translate(extras).strip()]
     return libraries
 
+def validate_name(library):
+    if not library or ("[" or "]" or ",") in library:
+        return False
+    return True
+
 @app.route("/add_library", methods=["POST"])
 def add_library():
     libraries=get_libraries(request.form["libraries"])
-    library=request.form["library"]
-    if library and library not in libraries:
+    library=request.form["library"].strip()
+    if validate_name(library) and library not in libraries:
         libraries.append(library)
-    return render_template("index.html", libraries=libraries)
+        return render_template("index.html", libraries=libraries)
+    return render_template("index.html", libraries=libraries, invalid_name=True)
 
 @app.route("/delete_library", methods=["POST"])
 def delete_library():

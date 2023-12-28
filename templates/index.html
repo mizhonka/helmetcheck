@@ -22,6 +22,9 @@
         <input type="hidden" name="libraries" value="{{libraries}}">
         <input type="submit" value="Lisää"><br>
     </form>
+    {%if invalid_name%}
+        <i>Kirjaston nimi ei ole kelvollinen</i>
+    {%endif%}
     <form action="/search" method="POST">
         <input type="submit" value="Hae">
         <input type="hidden" name="libraries" value="{{libraries}}">
