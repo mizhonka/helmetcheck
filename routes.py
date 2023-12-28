@@ -1,5 +1,7 @@
 from app import app
 from flask import render_template, request, redirect
+import re
+import urllib.request
 from search import Search
 import pieces
 import links
@@ -60,20 +62,32 @@ def delete_piece(id):
     pieces.delete(id)
     return redirect("/pieces")
 
-@app.route("/edit_piece/<int:id>")
-def edit_piece(id):
+@app.route("/edit_piece/<int:id>/<int:invalid>")
+def edit_piece(id, invalid):
     piece=pieces.get_by_id(id)
     piece_links=links.get_links(id)
-    return render_template("piece_edit.html", piece=piece, piece_links=piece_links)
+    return render_template("piece_edit.html", piece=piece, piece_links=piece_links, invalid_link=invalid)
+
+def validate_link(link):
+    if not re.search("^https://haku.helmet.fi/iii/encore/record/", link):
+        return False
+    try:
+        address=urllib.request.urlopen(link)
+        address.read()
+    except Exception:
+        return False
+    return True
 
 @app.route("/add_link", methods=["POST"])
 def add_link():
     id=request.form["id"]
-    link=request.form["link"]
+    link=request.form["link"].strip()
+    if not validate_link(link):
+        return redirect(f"/edit_piece/{id}/{1}")
     links.add(id, link)
-    return redirect(f"/edit_piece/{id}")
+    return redirect(f"/edit_piece/{id}/{0}")
 
 @app.route("/delete_link/<int:piece_id>/<int:id>")
 def delete_link(piece_id,id):
     links.delete(id)
-    return redirect(f"/edit_piece/{piece_id}")
+    return redirect(f"/edit_piece/{piece_id}/{0}")

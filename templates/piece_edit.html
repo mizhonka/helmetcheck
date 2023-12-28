@@ -11,6 +11,9 @@
         <input type="hidden" value="{{piece.id}}" name="id">
         <input type="submit" value="Lisää">
     </form>
+    {%if invalid_link%}
+        <i>Linkki ei ole kelvollinen</i>
+    {%endif%}
     <ul>
         {%for link in piece_links%}
         <li>
