@@ -1,5 +1,6 @@
 <head>
     <title>Wear a Helmet</title>
+    <link rel="stylesheet" href="../static/main.css">
 </head>
 <body>
     <a href="/">Haku</a>
@@ -12,10 +13,11 @@
     <ul>
         {%for piece in pieces%}
             <li>
-                {{piece.title}}
                 {%if piece.included%}
+                    {{piece.title}}
                     <a href="/hide_piece/{{piece.id}}">Piilota</a>
                 {%else%}
+                    <div class="hidden">{{piece.title}}</div>
                     <a href="/hide_piece/{{piece.id}}">Näytä</a>
                 {%endif%}
                 <a href="/edit_piece/{{piece.id}}/0">Muokkaa</a>

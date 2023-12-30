@@ -43,8 +43,8 @@ def search():
     libraries=get_libraries(request.form["libraries"])
     if not libraries:
         return redirect("/")
-    targets=links.get_included_links()
-    result=Search(targets, libraries).check_availability()
+    search_links=links.get_included_links()
+    result=Search(search_links, libraries).check_availability()
     return render_template("results.html", results=result)
 
 @app.route("/pieces")
