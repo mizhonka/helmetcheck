@@ -68,11 +68,11 @@ def delete_piece(id):
     pieces.delete(id)
     return redirect("/pieces")
 
-@app.route("/edit_piece/<int:id>/<int:invalid>")
-def edit_piece(id, invalid):
+@app.route("/edit_piece/<int:id>/<int:invalid>/<int:new_name>")
+def edit_piece(id, invalid, new_name):
     piece=pieces.get_by_id(id)
     piece_links=links.get_links(id)
-    return render_template("piece_edit.html", piece=piece, piece_links=piece_links, invalid_link=invalid)
+    return render_template("piece_edit.html", piece=piece, piece_links=piece_links, invalid_link=invalid, new_name=new_name)
 
 def validate_link(link):
     if not re.search("^https://haku.helmet.fi/iii/encore/record/", link):
@@ -89,11 +89,24 @@ def add_link():
     id=request.form["id"]
     link=request.form["link"].strip()
     if not validate_link(link):
-        return redirect(f"/edit_piece/{id}/{1}")
+        return redirect(f"/edit_piece/{id}/{1}/{0}")
     links.add(id, link)
-    return redirect(f"/edit_piece/{id}/{0}")
+    return redirect(f"/edit_piece/{id}/{0}/{0}")
 
 @app.route("/delete_link/<int:piece_id>/<int:id>")
 def delete_link(piece_id,id):
     links.delete(id)
-    return redirect(f"/edit_piece/{piece_id}/{0}")
+    return redirect(f"/edit_piece/{piece_id}/{0}/{0}")
+
+@app.route("/edit_name/<int:id>")
+def edit_name(id):
+    return redirect(f"/edit_piece/{id}/{0}/{1}")
+
+@app.route("/update_name", methods=["POST"])
+def update_name():
+    id=request.form["id"]
+    new_name=request.form["new_name"].strip()
+    if not new_name:
+        return redirect(f"/edit_piece/{id}/{0}/{1}")
+    pieces.update(id, new_name)
+    return redirect(f"/edit_piece/{id}/{0}/{0}")

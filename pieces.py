@@ -32,3 +32,8 @@ def delete(id):
     sql=text("DELETE FROM Pieces WHERE id=:id")
     db.session.execute(sql, {"id":id})
     db.session.commit()
+
+def update(id, name):
+    sql=text("UPDATE Pieces SET title=:name WHERE id=:id")
+    db.session.execute(sql, {"name":name, "id":id})
+    db.session.commit()
