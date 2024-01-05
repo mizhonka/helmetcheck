@@ -7,40 +7,26 @@ import pieces
 import links
 
 extras={ord("["):"", ord("]"):"", ord("'"):""}
+libraries=[]
 
 @app.route("/")
 def index():
-    return render_template("index.html", libraries=[])
-
-def get_libraries(str_libraries):
-    library_list=str_libraries.split(",")
-    libraries=[l.translate(extras).strip() for l in library_list if l.translate(extras).strip()]
-    return libraries
-
-def validate_name(library):
-    if not library or ("[" or "]" or ",") in library:
-        return False
-    return True
+    return render_template("index.html", libraries=libraries)
 
 @app.route("/add_library", methods=["POST"])
 def add_library():
-    libraries=get_libraries(request.form["libraries"])
-    library=request.form["library"].strip()
-    if validate_name(library) and library not in libraries:
+    library=request.form["lib_select"]
+    if library not in libraries:
         libraries.append(library)
-        return render_template("index.html", libraries=libraries)
-    return render_template("index.html", libraries=libraries, invalid_name=True)
+    return redirect("/")
 
-@app.route("/delete_library", methods=["POST"])
-def delete_library():
-    library=request.form["library"]
-    libraries=get_libraries(request.form["libraries"])
+@app.route("/delete_library/<string:library>")
+def delete_library(library):
     libraries.remove(library)
-    return render_template("index.html", libraries=libraries)
+    return redirect("/")
 
 @app.route("/search", methods=["POST"])
 def search():
-    libraries=get_libraries(request.form["libraries"])
     if not libraries:
         return redirect("/")
     search_links=links.get_included_links()

@@ -1,5 +1,6 @@
 <head>
     <title>Wear a Helmet</title>
+    <link rel="stylesheet" href="../static/main.css">
 </head>
 <body>
     <a href="/">Haku</a>
@@ -21,7 +22,7 @@
         <input type="submit" value="Lisää">
     </form>
     {%if invalid_link%}
-        <i>Linkki ei ole kelvollinen</i>
+        <div class="error">Linkki ei ole kelvollinen</div>
     {%endif%}
     <ul>
         {%for link in piece_links%}

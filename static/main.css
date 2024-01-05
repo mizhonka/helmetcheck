@@ -2,3 +2,8 @@
     color: dimgray;
     display: inline;
 }
+
+.error{
+    color: red;
+    display: inline;
+}

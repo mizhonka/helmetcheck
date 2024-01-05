@@ -1,5 +1,6 @@
 <head>
     <title>Wear a Helmet</title>
+    <link rel="stylesheet" href="../static/main.css">
 </head>
 <body>
     <a href="/">Haku</a>
@@ -9,24 +10,98 @@
         {%for l in libraries%}
             <li>
                 {{l}}
-                <form action="/delete_library" method="POST">
-                    <input type="submit" value="Poista">
-                    <input type="hidden" name="library" value="{{l}}">
-                    <input type="hidden" name="libraries" value="{{libraries}}">
-                </form>
+                <a href="/delete_library/{{l}}">Poista</a>
             </li>
         {%endfor%}
     </ul>
     <form action="/add_library" method="POST">
-        <input type="text" placeholder="Kirjaston nimi" name="library">
-        <input type="hidden" name="libraries" value="{{libraries}}">
+        <label for="lib_select">Valitse kirjasto:</label>
+        <select id="lib_select" name="lib_select">
+            <option value="Aineistohotelli Helsinki">Aineistohotelli Helsinki</option>
+            <option value="Aineistohotelli Vantaa">Aineistohotelli Vantaa</option>
+            <option value="Arabianranta">Arabianranta</option>
+            <option value="Auroran sairaala">Auroran Sairaala</option>
+            <option value="Entresse">Entresse</option>
+            <option value="Etelä-Haaga">Etelä-Haaga</option>
+            <option value="Hakunila">Hakunila</option>
+            <option value="Haukilahti">Haukilahti</option>
+            <option value="Herttoniemi">Herttoniemi</option>
+            <option value="Hiekkaharju">Hiekkaharju</option>
+            <option value="Iso-Omena">Iso-Omena</option>
+            <option value="Itäkeskus">Itäkeskus</option>
+            <option value="Jakomäki">Jakomäki</option>
+            <option value="Jätkäsaari">Jätkäsaari</option>
+            <option value="Kalajärvi">Kalajärvi</option>
+            <option value="Kallio">Kallio</option>
+            <option value="Kannelmäki">Kannelmäki</option>
+            <option value="Karhusuo">Karhusuo</option>
+            <option value="Kauklahti">Kauklahti</option>
+            <option value="Kalajärvi">Kalajärvi</option>
+            <option value="Kauniainen">Kauniainen</option>
+            <option value="Kirjastoauto Espoo">Kirjastoauto Espoo</option>
+            <option value="Kirjastoauto Helsinki">Kirjastoauto Helsinki</option>
+            <option value="Kirjastoauto Vantaa">Kirjastoauto Vantaa</option>
+            <option value="Koivukylä">Koivukylä</option>
+            <option value="Kontula">Kontula</option>
+            <option value="Kotipalvelu Espoo">Kotipalvelu Espoo</option>
+            <option value="Kotipalvelu Helsinki">Kotipalvelu Helsinki</option>
+            <option value="Kustaankartano">Kustaankartano</option>
+            <option value="Käpylä">Käpylä</option>
+            <option value="Laajalahti">Laajalahti</option>
+            <option value="Laaksolahti">Laaksolahti</option>
+            <option value="Lauttasaari">Lauttasaari</option>
+            <option value="Lippulaiva">Lippulaiva</option>
+            <option value="Lumo">Lumo</option>
+            <option value="Länsimäki">Länsimäki</option>
+            <option value="Malmi">Malmi</option>
+            <option value="Malminkartano">Malminkartano</option>
+            <option value="Martinlaakso">Martinlaakso</option>
+            <option value="Maunula">Maunula</option>
+            <option value="Mosaiikki">Mosaiikki</option>
+            <option value="Munkkiniemi">Munkkiniemi</option>
+            <option value="Myllypuro">Myllypuro</option>
+            <option value="Myllypuron palvelukeskus">Myllypuron palvelukeskus</option>
+            <option value="Myyrmäki">Myyrmäki</option>
+            <option value="Nöykkiö">Nöykkiö</option>
+            <option value="Oodi">Oodi</option>
+            <option value="Otaniemi">Otaniemi</option>
+            <option value="Oulunkylä">Oulunkylä</option>
+            <option value="Paloheinä">Paloheinä</option>
+            <option value="Pasila">Pasila</option>
+            <option value="Pikku Huopalahti">Pikku Huopalahti</option>
+            <option value="Pitäjänmäki">Pitäjänmäki</option>
+            <option value="Pohjois-Haaga">Pohjois-Haaga</option>
+            <option value="Point">Point</option>
+            <option value="Psykiatriakeskus">Psykiatriakeskus</option>
+            <option value="Puistola">Puistola</option>
+            <option value="Pukinmäki">Pukinmäki</option>
+            <option value="Pähkinärinne">Pähkinärinne</option>
+            <option value="Riistavuoren palvelukeskus">Riistavuoren palvelukeskus</option>
+            <option value="Rikhardinkatu">Rikhardinkatu</option>
+            <option value="Roihuvuoren palvelukeskus">Roihuvuoren palvelukeskus</option>
+            <option value="Roihuvuori">Roihuvuori</option>
+            <option value="Sakarinmäki">Sakarinmäki</option>
+            <option value="Saunalahti">Saunalahti</option>
+            <option value="Sello">Sello</option>
+            <option value="Suomenlinna">Suomenlinna</option>
+            <option value="Suurpelto">Suurpelto</option>
+            <option value="Suutarila">Suutarila</option>
+            <option value="Tapanila">Tapanila</option>
+            <option value="Tapiola">Tapiola</option>
+            <option value="Tapulikaupunki">Tapulikaupunki</option>
+            <option value="Tikkurila">Tikkurila</option>
+            <option value="Töölö">Töölö</option>
+            <option value="Vallila">Vallila</option>
+            <option value="Viherlaakso">Viherlaakso</option>
+            <option value="Viikki">Viikki</option>
+            <option value="Vuosaari">Vuosaari</option>
+        </select>
         <input type="submit" value="Lisää"><br>
     </form>
     {%if invalid_name%}
-        <i>Kirjaston nimi ei ole kelvollinen</i>
+        <div class="error">Kirjaston nimi ei ole kelvollinen</div>
     {%endif%}
     <form action="/search" method="POST">
         <input type="submit" value="Hae">
-        <input type="hidden" name="libraries" value="{{libraries}}">
     </form>
 </body>
