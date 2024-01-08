@@ -21,3 +21,10 @@ def get_included_links():
     sql=text("SELECT L.link, P.title FROM Links L, Pieces P WHERE L.piece_id=P.id AND P.included=TRUE")
     result=db.session.execute(sql).fetchall()
     return result
+
+def link_exists(id, link):
+    sql=text("SELECT id FROM Links WHERE piece_id=:id AND link=:link")
+    result=db.session.execute(sql, {"id":id, "link":link}).fetchone()
+    if result:
+        return True
+    return False

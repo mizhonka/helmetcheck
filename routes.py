@@ -60,7 +60,9 @@ def edit_piece(id, invalid, new_name):
     piece_links=links.get_links(id)
     return render_template("piece_edit.html", piece=piece, piece_links=piece_links, invalid_link=invalid, new_name=new_name)
 
-def validate_link(link):
+def validate_link(link,id):
+    if links.link_exists(id, link):
+        return False
     if not re.search("^https://haku.helmet.fi/iii/encore/record/", link):
         return False
     try:
@@ -74,7 +76,7 @@ def validate_link(link):
 def add_link():
     id=request.form["id"]
     link=request.form["link"].strip()
-    if not validate_link(link):
+    if not validate_link(link,id):
         return redirect(f"/edit_piece/{id}/{1}/{0}")
     links.add(id, link)
     return redirect(f"/edit_piece/{id}/{0}/{0}")
