@@ -1,6 +1,6 @@
 <head>
     <title>Wear a Helmet</title>
-    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="/static/main.css">
 </head>
 <body>
     <a href="/">Haku</a>
@@ -27,7 +27,7 @@
     <ul>
         {%for link in piece_links%}
         <li>
-            <a href="{{link.link}}">{{link.link}}</a>
+            <a class="overdrive" href="{{link.link}}">{{link.link}}</a>
             <a href="/delete_link/{{piece.id}}/{{link.id}}">Poista</a>
         </li>
         {%endfor%}

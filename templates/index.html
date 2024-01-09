@@ -1,6 +1,6 @@
 <head>
     <title>Wear a Helmet</title>
-    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="/static/main.css">
 </head>
 <body>
     <a href="/">Haku</a>
@@ -98,9 +98,6 @@
         </select>
         <input type="submit" value="Lisää"><br>
     </form>
-    {%if invalid_name%}
-        <div class="error">Kirjaston nimi ei ole kelvollinen</div>
-    {%endif%}
     <form action="/search" method="POST">
         <input type="submit" value="Hae">
     </form>

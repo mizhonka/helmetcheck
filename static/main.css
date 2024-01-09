@@ -1,3 +1,26 @@
+body{
+    padding: 2em;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+li{
+    padding: .8em;
+}
+
+a{
+    background: lavender;
+    border-radius: .5em;
+    padding: .5em;
+    text-decoration: none;
+    color: black;
+}
+
+.overdrive{
+    background: none;
+    text-decoration: underline;
+    color: darkorchid;
+}
+
 .hidden{
     color: dimgray;
     display: inline;
@@ -7,3 +30,5 @@
     color: red;
     display: inline;
 }
+
+
