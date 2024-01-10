@@ -7,18 +7,35 @@ li{
     padding: .8em;
 }
 
-a{
-    background: lavender;
-    border-radius: .5em;
+a, input[type=submit]{
+    background-color: white;
+    font-size: medium;
+    border: 1px solid dimgray;
+    border-radius: .4em;
     padding: .5em;
+    margin: 0 .2em;
     text-decoration: none;
-    color: black;
+    cursor: pointer;
+    color:black;
+}
+
+input[type=text], select{
+    padding: .5em 1em;
+}
+
+a:hover, input[type=submit]:hover{
+    background-color: lightgrey;
 }
 
 .overdrive{
     background: none;
+    border: none;
     text-decoration: underline;
-    color: darkorchid;
+    color: #9D6381;
+}
+
+.overdrive:hover{
+    background: none;
 }
 
 .hidden{
