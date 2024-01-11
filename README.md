@@ -6,9 +6,9 @@ Tällä sovelluksella voit ylläpitää listaa [Helmet-kirjastojen](https://www.
 
 Sovellus käyttää PostgreSQL-tietokantaa. Ohjeita sen asennukseen [täällä](https://www.postgresql.org/download/).
 1. Lataa uusin release (tai kloonaa repositorio) ja navigoi juurikansioon
-2. Luo .env -tiedosto ja määritä sen sisältö näin:  
+2. Luo .env -tiedosto ja määritä sen sisältö näin:
    ```
-   DATABASE_URL=<tietokannan-paikallinen-osoite>  
+   DATABASE_URL=<tietokannan-paikallinen-osoite>
    SECRET_KEY=<salainen-avain>
    ```
 3. Asenna riippuvuudet:
@@ -19,14 +19,26 @@ Sovellus käyttää PostgreSQL-tietokantaa. Ohjeita sen asennukseen [täällä](
    ```
    psql < schema.sql
    ```
-5. Aktivoi virtuaaliympäristö:  
+5. Aktivoi virtuaaliympäristö:
    ```
    python3 -m venv venv
    ```
    ```
    source venv/bin/activate
    ```
-6. Käynnistä:  
+6. Käynnistä:
    ```
    flask run
    ```
+
+## Käyttöohjeet
+
+[Uuden teoksen lisääminen](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_new.md)
+
+[Teoksen muokkaaminen ja linkkien lisääminen / poisto](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_edit.md)
+
+[Teoksen piilottaminen / näyttäminen](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_hiding.md)
+
+[Teoksen poistaminen](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_delete.md)
+
+[Haku-toiminto](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_search.md)
