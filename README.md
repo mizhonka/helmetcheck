@@ -17,14 +17,11 @@ Sovellus käyttää PostgreSQL-tietokantaa. Ohjeita sen asennukseen [täällä](
    ```
 4. Määritä tietokannan skeema:
    ```
-   psql < schema.sql
+   psql -d <tietokannan-nimi> < schema.sql
    ```
 5. Aktivoi virtuaaliympäristö:
    ```
-   python3 -m venv venv
-   ```
-   ```
-   source venv/bin/activate
+   poetry shell
    ```
 6. Käynnistä:
    ```
