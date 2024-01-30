@@ -2,9 +2,9 @@
 
 Tällä sovelluksella voit ylläpitää listaa [Helmet-kirjastojen](https://www.helmet.fi/fi-FI) teoksista ja linkeistä, sekä hakea niiden saatavuutta eri kirjastoista.
 
-![Kuva1](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page1)
-![Kuva2](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page2)
-![Kuva3](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page1)
+![Kuva1](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page1.png)
+![Kuva2](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page2.png)
+![Kuva3](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page3.png)
 
 ## Asennusohjeet (Linux)
 
