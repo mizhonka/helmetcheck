@@ -7,11 +7,21 @@ import pieces
 import links
 
 extras={ord("["):"", ord("]"):"", ord("'"):""}
+all_libraries=[]
 libraries=[]
+
+def get_all_libraries():
+    with open("all_libraries.txt", encoding="utf-8") as f:
+        for lib in f:
+            lib=lib.strip()
+            if(lib):
+                all_libraries.append(lib)
 
 @app.route("/")
 def index():
-    return render_template("index.html", libraries=libraries)
+    if not all_libraries:
+        get_all_libraries()
+    return render_template("index.html", libraries=libraries, all_libraries=all_libraries)
 
 @app.route("/add_library", methods=["POST"])
 def add_library():
@@ -31,7 +41,15 @@ def search():
         return redirect("/")
     search_links=links.get_included_links()
     result=Search(search_links, libraries).check_availability()
-    return render_template("results.html", results=result)
+    return render_template("results.html", results=result, completeSearch=1)
+
+@app.route("/search_piece/<int:id>")
+def search_piece(id):
+    if not all_libraries:
+        get_all_libraries()
+    piece_links=links.get_links(id)
+    result=Search(piece_links, all_libraries).check_libraries()
+    return render_template("results.html", results=result, completeSearch=0)
 
 @app.route("/pieces")
 def show_pieces():

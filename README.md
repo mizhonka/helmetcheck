@@ -2,6 +2,10 @@
 
 Tällä sovelluksella voit ylläpitää listaa [Helmet-kirjastojen](https://www.helmet.fi/fi-FI) teoksista ja linkeistä, sekä hakea niiden saatavuutta eri kirjastoista.
 
+![Kuva1](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page1)
+![Kuva2](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page2)
+![Kuva3](https://github.com/mizhonka/helmetcheck/blob/main/documentation/images/page1)
+
 ## Asennusohjeet (Linux)
 
 Sovellus käyttää PostgreSQL-tietokantaa. Ohjeita sen asennukseen [täällä](https://www.postgresql.org/download/).
@@ -39,3 +43,5 @@ Sovellus käyttää PostgreSQL-tietokantaa. Ohjeita sen asennukseen [täällä](
 [Teoksen poistaminen](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_delete.md)
 
 [Haku-toiminto](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_search.md)
+
+[Teoksen saatavuuden tarkistaminen](https://github.com/mizhonka/helmetcheck/blob/main/documentation/manual_availability.md)

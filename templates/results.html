@@ -5,15 +5,29 @@
 <body>
     <a href="/">Haku</a>
     <a href="/pieces">Teokset</a>
-    <h1>Seuraavat kirjat ovat saatavilla:</h1>
-    {%for title, links in results.items()%}
-        {%if links%}
-            <h3>{{title}}</h3>
-            <ul>
-                {%for link in links%}
-                    <li><a class="overdrive" href="{{link}}">{{link}}</a></li>
-                {%endfor%}
-            </ul>
-        {%endif%}
-    {%endfor%}
+    {%if completeSearch%}
+        <h1>Seuraavat teokset ovat saatavilla:</h1>
+        {%for title, links in results.items()%}
+            {%if links%}
+                <h3>{{title}}</h3>
+                <ul>
+                    {%for link in links%}
+                        <li><a class="overdrive" href="{{link}}">{{link}}</a></li>
+                    {%endfor%}
+                </ul>
+            {%endif%}
+        {%endfor%}
+    {%else%}
+        <h1>Teos on saatavilla seuraavissa kirjastoissa:</h1>
+        {%for link, libs in results.items()%}
+            {%if libs%}
+                <a class="overdrive" href="{{link}}">{{link}}</a>
+                <ul>
+                    {%for lib in libs%}
+                        <li>{{lib}}</li>
+                    {%endfor%}
+                </ul>
+            {%endif%}
+        {%endfor%}
+    {%endif%}
 </body>

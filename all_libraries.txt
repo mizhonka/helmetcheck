@@ -1,0 +1,77 @@
+Aineistohotelli Helsinki
+Aineistohotelli Vantaa
+Arabianranta
+Auroran sairaala
+Entresse
+Etelä-Haaga
+Hakunila
+Haukilahti
+Herttoniemi
+Hiekkaharju
+Iso-Omena
+Itäkeskus
+Jakomäki
+Jätkäsaari
+Kalajärvi
+Kallio
+Kannelmäki
+Karhusuo
+Kauklahti
+Kauniainen
+Kirjastoauto Espoo
+Kirjastoauto Helsinki
+Kirjastoauto Vantaa
+Koivukylä
+Kontula
+Kotipalvelu Espoo
+Kotipalvelu Helsinki
+Kustaankartano
+Käpylä
+Laajalahti
+Laaksolahti
+Lauttasaari
+Lippulaiva
+Lumo
+Länsimäki
+Malmi
+Malminkartano
+Martinlaakso
+Maunula
+Mosaiikki
+Munkkiniemi
+Myllypuro
+Myllypuron palvelukeskus
+Myyrmäki
+Nöykkiö
+Oodi
+Otaniemi
+Oulunkylä
+Paloheinä
+Pasila
+Pikku Huopalahti
+Pitäjänmäki
+Pohjois-Haaga
+Point
+Psykiatriakeskus
+Puistola
+Pukinmäki
+Pähkinärinne
+Riistavuoren palvelukeskus
+Rikhardinkatu
+Roihuvuoren palvelukeskus
+Roihuvuori
+Sakarinmäki
+Saunalahti
+Sello
+Suomenlinna
+Suurpelto
+Suutarila
+Tapanila
+Tapiola
+Tapulikaupunki
+Tikkurila
+Töölö
+Vallila
+Viherlaakso
+Viikki
+Vuosaari

@@ -3,7 +3,6 @@ import urllib.request
 class Search:
     def __init__(self, targets, libraries):
         self.targets=targets
-        self.available=dict.fromkeys([target.title for target in targets])
         self.libraries=libraries
 
     def get_html(self, link):
@@ -13,9 +12,11 @@ class Search:
         return html
 
     def check_availability(self):
+        available={}
         for target in self.targets:
             link=target.link
             piece=target.title
+            available[piece]=[]
             html=self.get_html(link)
             if "Saatavilla" in html:
                 a=html.find("allavailitems")
@@ -24,8 +25,22 @@ class Search:
                 html=html[:b]
                 for lib in self.libraries:
                     if lib in html:
-                        if not self.available[piece]:
-                            self.available[piece]=[]
-                        self.available[piece].append(link)
+                        available[piece].append(link)
                         break
-        return self.available
+        return available
+
+    def check_libraries(self):
+        available={}
+        for target in self.targets:
+            link=target.link
+            available[link]=[]
+            html=self.get_html(link)
+            if "Saatavilla" in html:
+                a=html.find("allavailitems")
+                html=html[a:]
+                b=html.find("</table>")
+                html=html[:b]
+                for lib in self.libraries:
+                    if lib in html:
+                        available[link].append(lib)
+        return available
